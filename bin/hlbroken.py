@@ -41,7 +41,8 @@ if __name__ == "__main__":
     logger.info("Running Blast.")
 
     # run blast
-    processes.blast(args.chromosome, args.outdir, prefix, logger)
+    absolute_path = os.path.dirname(__file__)
+    processes.blast(args.chromosome, args.outdir, prefix, absolute_path, logger)
 
     # determines the number of hits
     hits = processes.process_blast_output(args.outdir, prefix, logger) 

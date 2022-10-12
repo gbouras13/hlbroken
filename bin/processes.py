@@ -15,8 +15,8 @@ def write_to_log(s, logger):
                 else:
                     break
 
-def blast(input, out_dir, prefix, logger):
-    blast_db = os.path.join('database', "hlb.fasta") 
+def blast(input, out_dir, prefix, bin_path, logger):
+    blast_db = os.path.join(bin_path, "..", 'database', "hlb.fasta") 
     output_file = os.path.join(out_dir, prefix + "_blast_output.txt") 
     try:
         blast = sp.Popen(["blastn", "-query", input, "-db",blast_db, "-evalue", "1e-20", "-out",output_file, "-outfmt", "6 qseqid qlen sseqid slen length qstart qend sstart send pident nident gaps mismatch qseq sseq"  ], stdout=sp.PIPE, stderr=sp.PIPE) 
