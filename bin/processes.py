@@ -26,15 +26,6 @@ def blast(input, out_dir, prefix, bin_path, logger):
 
 
 
-
-def process_blast_output(out_dir):
-    info_file =  os.path.join(out_dir, "assembly_info.txt")
-    col_list = ["seq_name", "length", "cov", "circ", "repeat", "mult", "alt_group", "graph_path"] 
-    info_df = pd.read_csv(info_file, delimiter= '\t', index_col=False , names=col_list, skiprows=1) 
-    contig_count = len(info_df['seq_name'])
-    print("Flye assembled " + str(contig_count) + " contigs.")
-    return contig_count
-
 def process_blast_output(out_dir, prefix, logger):
     blast_file =  os.path.join(out_dir, prefix + "_blast_output.txt") 
     col_list = ["qseqid", "qlen", "sseqid", "slen", "length", "qstart", "qend", "sstart", "send", "pident", "nident", "gaps", "mismatch", "qseq", "sseq"] 
