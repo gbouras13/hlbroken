@@ -13,7 +13,7 @@ Installation
 
 hlbbroken requires only blast and biopython.
 
-The easiest way to install is via conda
+The easiest way to install is via conda either manually
 
 ```
 git clone https://github.com/gbouras13/hlbroken.git
@@ -21,4 +21,30 @@ cd hlbroken
 conda env create -f environment.yml
 conda activate hlbroken_env
 hlbroken.py -h
+```
+
+or via my conda channel.
+
+```
+conda install -c gbouras13 hlbroken
+```
+
+Usage
+----------
+
+```
+usage: hlbroken.py [-h] -c CHROMOSOME [-o OUTDIR] [-f] [-p PREFIX] [-V]
+
+hlbroken: Identification and Extraction of s aureus hlb gene disruptions in complete genomes.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CHROMOSOME, --chromosome CHROMOSOME
+                        s aureus chromosome assembly file in FASTA format.
+  -o OUTDIR, --outdir OUTDIR
+                        Directory to write the output to.
+  -f, --force           Overwrites the output directory.
+  -p PREFIX, --prefix PREFIX
+                        Prefix for output files. This is not required
+  -V, --version         show program's version number and exit
 ```
