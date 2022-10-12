@@ -54,7 +54,7 @@ if __name__ == "__main__":
         logger.info("Extracting hlb disrupting sequence.")
         processes.extract_prophage(args.chromosome, args.outdir, prefix, logger)
     else:
-        processes.touch_output_files(args.out_dir, prefix)
+        processes.touch_output_files(args.outdir, prefix)
 
     # Determine elapsed time
     elapsed_time = time.time() - start_time
