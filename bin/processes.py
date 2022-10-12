@@ -73,8 +73,8 @@ def extract_prophage(input, out_dir, prefix, logger):
         phage_end = blast_df["qstart"][1]
 
     if abs(phage_end - phage_start) < 20000 or abs(phage_end - phage_start) > 100000:
-        print('Difference between start and end of phage is under 5000. Likely something else going on.')
-        logger.info('Difference between start and end of phage is under 5000. Likely something else going on.')
+        print('Difference between start and end of phage is under 20000 or over 100000bp. Likely something else going on.')
+        logger.info('Difference between start and end of phage is under 20000 or over 100000bp. Likely something else going on.')
 
 
     # get record
